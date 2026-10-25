@@ -18,7 +18,7 @@ interview-prep-dsa-coding/
   problems/                  # Create as you work
     0001-two-sum/
       problem-description.md # Problem, examples, constraints and source URL
-      my-solution.md         # Your Python code imported from LeetCode
+      my-solution.py         # Your Python code and local example assertions
       leetcode-solution.md   # Reference solution from LeetCode
   patterns/                  # Your own reusable explanations
     sliding-window.md
@@ -31,18 +31,28 @@ Keep folders flat enough to find a problem by number or title. Record patterns i
 ## Files for each problem
 
 - **`problem-description.md`**: the problem description, examples, constraints and original LeetCode problem URL.
-- **`my-solution.md`**: the Python code you wrote on LeetCode, imported into a fenced `python` code block. Keep your submitted code as written, along with the submission date, result, approach, time/space complexity and any mistakes or lessons. Record revisions separately so your original attempt remains identifiable.
+- **`my-solution.py`**: the Python code you wrote on LeetCode, saved as an executable file. Keep the LeetCode `Solution` class and signature, with learning notes and submission details in a module docstring or comments. Put local example assertions in a separate function called under `if __name__ == "__main__":` so importing the file does not run them. Keep revisions identifiable through Git history.
 - **`leetcode-solution.md`**: the reference solution from LeetCode, including its explanation and code in a fenced code block. Include the exact source URL and identify whether it is an official editorial or a community solution; credit the author when provided. Keep this separate from your own solution so you can compare the approaches.
 
 ## Five minutes after each problem
 
 1. Create the problem folder and fill in `problem-description.md` with the problem details and source URL.
-2. Import your LeetCode code into `my-solution.md`, recording the actual submission result even if it was not accepted. Use `templates/problem.md` as a checklist for the accompanying learning notes.
+2. Import your LeetCode code into `my-solution.py`, recording the actual submission result even if it was not accepted. Use `templates/problem.md` as a checklist for notes in the Python file’s docstring or comments. Run the local example assertions before updating the tracker.
 3. After your attempt, add the LeetCode reference solution to `leetcode-solution.md` with its source attribution. If it is not available yet, leave it pending rather than inventing a reference solution.
-4. In `my-solution.md`, note the key difference from the reference, the main mistake and time/space complexity. Three useful sentences are sufficient.
+4. In the docstring or comments of `my-solution.py`, note the key difference from the reference, the main mistake and time/space complexity. Three useful sentences are sufficient.
 5. Update outcome, last attempt and next review in the tracker. Mark attempts that used the reference solution as guided.
 
 Write a longer explanation only when it teaches something you expect to forget. For reference material that cannot be reproduced, keep its source link and a summary in your own words.
+
+## Run a solution locally
+
+From the repository root, run:
+
+```bash
+python3 problems/0001-two-sum/my-solution.py
+```
+
+For problem 1.1, fill in `Solution.twoSum` first. Until then, the scaffold raises `NotImplementedError`. The local checks use the three examples from the problem description and accept either ordering of the expected indices. A failed assertion shows the input, expected result and actual result. These examples are a starting check, not the full LeetCode test suite. Run Python normally, without `-O`, which disables assertions.
 
 ## Working repository
 
@@ -67,7 +77,7 @@ Add future problem, pattern, weekly-review and mock files explicitly as they are
 
 I recommend beginning with manual capture for two weeks. If copying becomes a recurring nuisance, inspect the official project's current extension link, requested access and recent issue reports before choosing it. Sync compatibility has not been tested here, and no extension has been installed or authorized.
 
-Use a dedicated solution folder or repository when configuring a sync tool and check one uploaded solution before depending on it. If a sync tool exports standalone code files, import your Python code into `my-solution.md` and retain the three-file layout above. Keep the same short notes and revision workflow even if code transfer becomes automatic.
+Use a dedicated solution folder or repository when configuring a sync tool and check one uploaded solution before depending on it. If a sync tool exports standalone code files, import your Python code into `my-solution.py` and retain the three-file layout above. Keep the same short notes and revision workflow even if code transfer becomes automatic.
 
 ## Long-term reference
 

@@ -4,8 +4,13 @@ Start with **NeetCode free + LeetCode free**, use a small problem queue, and res
 
 Research checked on **October 25, 2026**. The default plan assumes an experienced programmer refreshing DSA, **nine hours per week**, and **12 weeks**. **Preferred language: Python.** Target level, companies, and interview dates are still to be personalized.
 
+## Tracker and Progresss
+- [Problem queue and revision tracker](TRACKER.md)
+
+
 ## Reference files
 
+- [Python refresher for coding interviews](PYTHON-REFRESHER.md)
 - [Platform comparison and review evidence](PLATFORMS.md)
 - [Study plan and readiness checks](STUDY-PLAN.md)
 - [Problem queue and revision tracker](TRACKER.md)
