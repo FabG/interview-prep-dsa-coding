@@ -22,7 +22,7 @@ Use ISO dates (`YYYY-MM-DD`). Put the immediate next review in the table; retain
 | # | Problem | Complexity | Outcome | Last attempt | Next review | Main mistake or note path |
 | --- | --- | --- | --- | --- | --- | --- |
 | 1.1 | [1 Two Sum](https://leetcode.com/problems/two-sum/) | Easy | G | 2026-10-25 | 2026-10-27 | [Problem](problems/0001-two-sum/problem-description.md) · [My solution](problems/0001-two-sum/my-solution.py) · Guided hash map; O(n) average time, O(n) space; 3/3 local examples pass. Re-solve unaided; LeetCode acceptance unconfirmed. |
-| 1.2 | [217 Contains Duplicate](https://leetcode.com/problems/contains-duplicate/) | Easy | N | | | |
+| 1.2 | [217 Contains Duplicate](https://leetcode.com/problems/contains-duplicate/) | Easy | G | 2026-10-25 | 2026-10-27 | [Problem](problems/0217-contains-duplicate/problem-description.md) · [My solution](problems/0217-contains-duplicate/my-solution.py) · [LeetCode solution](problems/0217-contains-duplicate/leetcode-solution.md) · Set length comparison with Python guidance; O(n) average time, O(n) worst-case space; 3/3 local examples pass. Re-solve unaided; LeetCode acceptance unconfirmed. |
 | 1.3 | [242 Valid Anagram](https://leetcode.com/problems/valid-anagram/) | Easy | N | | | |
 | 1.4 | [49 Group Anagrams](https://leetcode.com/problems/group-anagrams/) | Medium | N | | | |
 | 1.5 | [238 Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) | Medium | N | | | |
