@@ -2,7 +2,7 @@
 
 Start with **NeetCode free + LeetCode free**, use a small problem queue, and reserve time for revision and mock interviews. Consider a paid course only if explanations are slowing progress; consider LeetCode Premium when specific interviews are scheduled.
 
-Research checked on **October 25, 2026**. The default plan assumes an experienced programmer refreshing DSA, **nine hours per week**, and **12 weeks**. Language, target level, companies, and interview dates are still to be personalized.
+Research checked on **October 25, 2026**. The default plan assumes an experienced programmer refreshing DSA, **nine hours per week**, and **12 weeks**. **Preferred language: Python.** Target level, companies, and interview dates are still to be personalized.
 
 ## Reference files
 
@@ -16,7 +16,7 @@ Research checked on **October 25, 2026**. The default plan assumes an experience
 
 ## Start today
 
-1. Choose the language you already use most fluently.
+1. Use Python for coding practice and solutions.
 2. Open the first problem in the tracker and attempt it before viewing a solution.
 3. Spend the last five minutes recording the insight, mistake, and next review date.
 4. Follow the weekday and weekend schedule in the study plan.

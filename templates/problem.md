@@ -2,7 +2,7 @@
 
 - Source URL:
 - Date:
-- Language:
+- Language: Python
 - Pattern:
 - Outcome: not started / guided / independent / repeat success
 - Time spent:

@@ -58,7 +58,7 @@ Prefer **50–60 distinct problems with meaningful repetitions and mocks** to ru
 - **Already comfortable with medium questions:** use an eight-week version with two weeks diagnosing gaps, four weeks of mixed practice and two weeks of mocks/targeting. Spend less time watching lessons.
 - **Only two weekend hours available:** use a seven-hour week, reduce new work to three or four problems, and stretch the plan toward 16 weeks.
 
-Use your strongest existing language. Switching languages during a short prep window creates another skill to practice. Build a small personal syntax reference for collections, sorting, heaps, queues and common boundary cases in that language.
+Your preferred language is **Python**. Use Python for practice, solutions and mock interviews. Build a small personal Python syntax reference for collections, sorting, heaps, queues and common boundary cases.
 
 ## Practical readiness checks
 
