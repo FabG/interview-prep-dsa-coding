@@ -28,7 +28,8 @@ These costs describe isAnagram, not the local test harness.
 Mistakes and lessons:
 - sorted() returns a list of characters; join() builds a string from that list.
 - Equality checks both character values and their multiplicities after sorting.
-- The scaffold exception after return is unreachable.
+- Keep the method named isAnagram to match LeetCode and the local runner.
+- Removed the unreachable scaffold exception after return.
 
 Comparison with the agent solution:
 My approach sorts strings; the agent uses 26 character counters for the fixed
@@ -49,14 +50,10 @@ Passing these examples does not confirm LeetCode acceptance.
 
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        # order characters in each string alhpabetically
-        # and compate if the 2 lists equal each other with == having the eaxct same characters
-        # To reorder a string so its characters are in alphabetical order, use the built-in sorted()
-        # function combined with ''.join().
+        # Sort both strings to compare their characters and multiplicities.
         s_sorted = "".join(sorted(s))
         t_sorted = "".join(sorted(t))
         return s_sorted == t_sorted
-        raise NotImplementedError("Add your isAnagram implementation, then run this file again.")
 
 
 def run_examples() -> None:
