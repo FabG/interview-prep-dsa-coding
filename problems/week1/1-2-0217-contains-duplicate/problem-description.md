@@ -28,11 +28,11 @@ This description summarizes the linked LeetCode problem.
 ## Workspace
 
 - [My solution](my-solution.py)
-- [LeetCode reference solution](leetcode-solution.md)
-- [Progress tracker](../../TRACKER.md)
+- [Agent solution](agent-solution.md)
+- [Progress tracker](../../../TRACKER.md)
 
 Run from the repository root:
 
 ```bash
-python3 problems/0217-contains-duplicate/my-solution.py
+python3 problems/week1/1-2-0217-contains-duplicate/my-solution.py
 ```

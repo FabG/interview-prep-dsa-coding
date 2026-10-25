@@ -1,30 +1,62 @@
-# Coding and DSA interview preparation
+# Coding exercises and DSA solutions
 
-Start with **NeetCode free + LeetCode free**, use a small problem queue, and reserve time for revision and mock interviews. Consider a paid course only if explanations are slowing progress; consider LeetCode Premium when specific interviews are scheduled.
+A growing bank of coding exercises, Python solutions, and notes on data structures and algorithms. Use it to practice a new technique, refresh your skills, prepare for an interview, or choose an exercise for a technical interview.
 
-Research checked on **October 25, 2026**. The default plan assumes an experienced programmer refreshing DSA, **nine hours per week**, and **12 weeks**. **Preferred language: Python.** Target level, companies, and interview dates are still to be personalized.
+**For engineers:** pick a problem, try your own approach, run the examples locally, and compare your reasoning and complexity with the available solutions.
 
-## Tracker and Progresss
-- [Problem queue and revision tracker](TRACKER.md)
+**For interviewers:** browse the problem queue by topic and difficulty, use the descriptions to frame an exercise, and consult the solutions to discuss approaches, tradeoffs, and edge cases.
 
+## Browse the exercises
 
-## Reference files
+Start with the [problem queue and tracker](TRACKER.md). It contains **50 selected problems** across arrays, hashing, two pointers, binary search, stacks, linked lists, trees, heaps, graphs, backtracking, greedy algorithms, and dynamic programming, plus slots for additional practice.
 
-- [Python refresher for coding interviews](PYTHON-REFRESHER.md)
-- [Platform comparison and review evidence](PLATFORMS.md)
-- [Study plan and readiness checks](STUDY-PLAN.md)
-- [Problem queue and revision tracker](TRACKER.md)
-- [GitHub capture workflow](GITHUB-WORKFLOW.md)
-- [Problem note template](templates/problem.md)
-- [Weekly review template](templates/weekly-review.md)
-- [Mock interview template](templates/mock-interview.md)
+The queue is broader than the implemented solution bank. Problem folders and solutions are added as exercises are attempted; reference solution files may still be pending. Outcome and review flags record the repository author's practice progress.
 
-## Start today
+| Exercise | Difficulty | Description | Agent solution | My solution |
+| --- | --- | --- | --- | --- |
+| 1.1 Two Sum | Easy | [Problem](problems/week1/1-1-0001-two-sum/problem-description.md) | [Agent solution](problems/week1/1-1-0001-two-sum/agent-solution.md) | [My solution and examples](problems/week1/1-1-0001-two-sum/my-solution.py) |
+| 1.2 Contains Duplicate | Easy | [Problem](problems/week1/1-2-0217-contains-duplicate/problem-description.md) | [Agent solution](problems/week1/1-2-0217-contains-duplicate/agent-solution.md) | [My solution and examples](problems/week1/1-2-0217-contains-duplicate/my-solution.py) |
 
-1. Use Python for coding practice and solutions.
-2. Open the first problem in the tracker and attempt it before viewing a solution.
-3. Spend the last five minutes recording the insight, mistake, and next review date.
-4. Follow the weekday and weekend schedule in the study plan.
-5. After two weeks, decide whether a specific paid resource would solve an observed problem.
+## Try an exercise
 
-The tracker begins with **50 selected problems** and leaves the final two weeks for unfamiliar questions and weaknesses. Completion is useful only when you can reconstruct the reasoning without looking at notes.
+1. Open its `problem-description.md` for the task, examples, constraints, and original source.
+2. Attempt the problem before reading the solution. The existing `my-solution.py` contains implementation details and notes, so use a separate file if you want a fresh attempt.
+3. Compare your approach with the saved Python solution and, where available, `agent-solution.md`.
+4. Run the local examples and discuss correctness, edge cases, time complexity, and space usage.
+
+With Python 3.9 or newer, run a saved solution from the repository root:
+
+```bash
+python3 problems/week1/1-1-0001-two-sum/my-solution.py
+python3 problems/week1/1-2-0217-contains-duplicate/my-solution.py
+```
+
+The example runners report each result and continue after a failure. Run without `-O` so assertions remain enabled. These examples are a starting point; they do not cover the full LeetCode test suite.
+
+## Repository layout
+
+Exercises are grouped by study week for navigation. You can work through them in any order.
+
+```text
+problems/
+  week1/
+    1-1-0001-two-sum/
+      problem-description.md
+      my-solution.py
+      agent-solution.md
+    1-2-0217-contains-duplicate/
+      ...
+```
+
+Folder names follow `<week>-<position>-<leetcode-id>-<slug>`, matching the stable problem references in the tracker. Each problem retains its source link; reference solutions include attribution details where available. See the [capture workflow](GITHUB-WORKFLOW.md) for adding exercises and recording solutions.
+
+## Learning and interview preparation resources
+
+For a structured route through the exercises, the optional study plan spans **12 weeks at about nine hours per week**. Python is the default language for this repository.
+
+- [Python refresher](PYTHON-REFRESHER.md): syntax and standard-library tools for developers refreshing their Python skills.
+- [Study plan and readiness checks](STUDY-PLAN.md): practice sessions, revision, and mock interviews.
+- [Platform comparison and review evidence](PLATFORMS.md): free and paid preparation resources, researched October 25, 2026.
+- [Problem note template](templates/problem.md): record reasoning, complexity, and lessons.
+- [Weekly review template](templates/weekly-review.md): track practice and revisit difficult topics.
+- [Mock interview template](templates/mock-interview.md): structure an interview practice session and feedback.

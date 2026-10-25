@@ -348,7 +348,7 @@ Spend 15–20 minutes on three drills. Type the code without copying an earlier 
 7. **Search boundaries:** find insertion positions on either side of 5 in `[1, 5, 5, 5, 8]`. Expect 1 and 4.
 8. **Heap:** remove the two smallest values from `[7, 1, 4, 2]`. Expect 1 followed by 2.
 
-When these feel comfortable, return to [problem 1.1](problems/0001-two-sum/problem-description.md). Keep your submitted code in [my-solution.py](problems/0001-two-sum/my-solution.py) and record any syntax mistake you had to look up. Revisit only those sections before the next session.
+When these feel comfortable, return to [problem 1.1](problems/week1/1-1-0001-two-sum/problem-description.md). Keep your submitted code in [my-solution.py](problems/week1/1-1-0001-two-sum/my-solution.py) and record any syntax mistake you had to look up. Revisit only those sections before the next session.
 
 ## Before you submit
 

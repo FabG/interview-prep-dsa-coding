@@ -16,29 +16,31 @@ interview-prep-dsa-coding/
     weekly-review.md
     mock-interview.md
   problems/                  # Create as you work
-    0001-two-sum/
-      problem-description.md # Problem, examples, constraints and source URL
-      my-solution.py         # Your Python code and local example assertions
-      leetcode-solution.md   # Reference solution from LeetCode
+    week1/
+      1-1-0001-two-sum/
+        problem-description.md # Problem, examples, constraints and source URL
+        my-solution.py         # Your Python code and local example assertions
+        agent-solution.md   # Agent explanation and reference code
+      1-2-0217-contains-duplicate/
   patterns/                  # Your own reusable explanations
     sliding-window.md
   weekly/                    # Short weekly retrospectives
   mocks/                     # Feedback and next actions
 ```
 
-Keep folders flat enough to find a problem by number or title. Record patterns in the tracker because one problem can teach several patterns.
+Group problems under `problems/week1/`, `problems/week2/`, and so on. Name problem folders `<week>-<position>-<leetcode-id>-<slug>`, using the tracker reference and a four-digit LeetCode ID: for example, `1-1-0001-two-sum` and `1-2-0217-contains-duplicate`. Record patterns in the tracker because one problem can teach several patterns.
 
 ## Files for each problem
 
 - **`problem-description.md`**: the problem description, examples, constraints and original LeetCode problem URL.
 - **`my-solution.py`**: the Python code you wrote on LeetCode, saved as an executable file. Keep the LeetCode `Solution` class and signature, with learning notes and submission details in a module docstring or comments. Put local example assertions in a separate function called under `if __name__ == "__main__":` so importing the file does not run them. Keep revisions identifiable through Git history.
-- **`leetcode-solution.md`**: the reference solution from LeetCode, including its explanation and code in a fenced code block. Include the exact source URL and identify whether it is an official editorial or a community solution; credit the author when provided. Keep this separate from your own solution so you can compare the approaches.
+- **`agent-solution.md`**: the agent-prepared solution and explanation, with code in a fenced code block. Identify agent-written code explicitly. For supplied or imported code, preserve its provenance, include the exact source URL when available, and credit the author when provided. Keep this separate from your own solution so you can compare the approaches.
 
 ## Five minutes after each problem
 
 1. Create the problem folder and fill in `problem-description.md` with the problem details and source URL.
 2. Import your LeetCode code into `my-solution.py`, recording the actual submission result even if it was not accepted. Use `templates/problem.md` as a checklist for notes in the Python file’s docstring or comments. Run the local example assertions before updating the tracker.
-3. After your attempt, add the LeetCode reference solution to `leetcode-solution.md` with its source attribution. If it is not available yet, leave it pending rather than inventing a reference solution.
+3. After your attempt, add an agent-prepared solution to `agent-solution.md`, recording whether its code was written by the agent, supplied by the user, or imported from an attributed source. Leave the file pending until a solution has been added.
 4. In the docstring or comments of `my-solution.py`, note the key difference from the reference, the main mistake and time/space complexity. Three useful sentences are sufficient.
 5. Update outcome, last attempt and next review in the tracker. Mark attempts that used the reference solution as guided.
 
@@ -49,7 +51,7 @@ Write a longer explanation only when it teaches something you expect to forget. 
 From the repository root, run:
 
 ```bash
-python3 problems/0001-two-sum/my-solution.py
+python3 problems/week1/1-1-0001-two-sum/my-solution.py
 ```
 
 For problem 1.1, fill in `Solution.twoSum` first. Until then, the scaffold raises `NotImplementedError`. The local checks use the three examples from the problem description and accept either ordering of the expected indices. A failed assertion shows the input, expected result and actual result. These examples are a starting check, not the full LeetCode test suite. Run Python normally, without `-O`, which disables assertions.

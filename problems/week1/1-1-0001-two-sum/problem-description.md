@@ -36,5 +36,5 @@ Can your approach run faster than quadratic time, `O(n²)`?
 ## Workspace
 
 - [My solution](my-solution.py)
-- [LeetCode reference solution](leetcode-solution.md)
-- [Progress tracker](../../TRACKER.md)
+- [Agent solution](agent-solution.md)
+- [Progress tracker](../../../TRACKER.md)

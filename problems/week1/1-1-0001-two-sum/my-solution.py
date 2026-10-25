@@ -43,14 +43,14 @@ Mistakes and lessons:
 - Keep return statements indented inside the function.
 - Continue running later examples after an assertion or runtime failure.
 
-Comparison with the LeetCode reference: pending; reference not imported yet.
+Comparison with the agent solution: pending; reference not added yet.
 
 Review history:
 - 2026-10-25: guided implementation; all 3 local examples passed.
   Next: reconstruct the complement approach independently on 2026-10-27.
 
 Run from the repository root:
-    python3 problems/0001-two-sum/my-solution.py
+    python3 problems/week1/1-1-0001-two-sum/my-solution.py
 
 Keep local assertions outside the class. Submit the current solution method
 and any required imports. Passing these examples does not confirm a LeetCode

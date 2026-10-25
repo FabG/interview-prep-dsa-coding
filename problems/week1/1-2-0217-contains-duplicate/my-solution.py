@@ -1,14 +1,15 @@
 """Problem 1.2: Contains Duplicate — my solution.
 
 Source: https://leetcode.com/problems/contains-duplicate/
-Status: G — solved with Python set guidance; all 3 local examples pass
+Status: I — solved independently, as confirmed by the user; all 3 local examples pass
 Submission link:
 Submission date:
 Submission result: LeetCode acceptance not yet confirmed
 Local verification: 2026-10-25 — 3 passed, 0 failed
 Time spent: not recorded
-Assistance used: problem scaffold and AI explanation of list-to-set conversion
-Next review: 2026-10-27 — re-solve without looking at the code
+Assistance used: no solution hints needed, as confirmed by the user.
+Python syntax discussion and test scaffolding are recorded separately from solving.
+To review again?: No
 
 Approach and reasoning:
 Build unique_nums = set(nums), which retains one copy of each distinct value.
@@ -33,16 +34,16 @@ Mistakes and lessons:
 
 Comparison with the supplied LeetCode solution:
 Same set construction and length comparison; identical behavior and complexity.
-Captured in leetcode-solution.md from user-provided code; exact source URL and
+Captured in agent-solution.md from user-provided code; exact source URL and
 acceptance status were not provided. The supplied version omits the unreachable
 scaffold exception after return.
 Review history:
-- 2026-10-25: implemented after Python set guidance; all 3 local examples passed.
+- 2026-10-25: independently solved, as confirmed by the user; all 3 examples passed.
   Compared with the user-supplied LeetCode solution: same algorithm.
-  Next: reconstruct the approach independently on 2026-10-27.
+  No further review requested.
 
 Run from the repository root:
-    python3 problems/0217-contains-duplicate/my-solution.py
+    python3 problems/week1/1-2-0217-contains-duplicate/my-solution.py
 
 Each example runs even if an earlier example fails or raises an error.
 Run without -O, which disables assertions. Submit the Solution class and
