@@ -9,6 +9,12 @@ Practice designing systems, explaining decisions, and handling follow-up constra
 
 The queue contains original practice scopes linked to relevant learning material. It is not a verified list of questions asked by specific companies. Local full solutions will be added as exercises are attempted; the source comparison identifies external worked guidance.
 
+## Available exercises
+
+| # | Exercise | Difficulty | My solution | Agent solution |
+| --- | --- | --- | --- | --- |
+| SD-001 | [Ticket classifier with human fallback](exercises/sd-001-ticket-classifier/problem-description.md) | Foundation | [Answer workspace](exercises/sd-001-ticket-classifier/my-solution.md) | Pending |
+
 ## Difficulty
 
 These are repository-assigned levels, not source ratings or company hiring levels. The same product can become harder when its constraints change.
