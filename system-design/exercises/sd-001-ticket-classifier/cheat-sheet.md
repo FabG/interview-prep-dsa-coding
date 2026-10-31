@@ -1,6 +1,6 @@
 # My cheat sheet — Classification and model evaluation
 
-## One-vs-rest evaluation
+## 1. One-vs-rest evaluation
 
 For a multi-class classifier, evaluate each queue separately: treat that queue
 as the positive class and all other queues as the negative class. This evaluates
@@ -11,7 +11,7 @@ For **Billing**:
 - **Precision:** Of tickets predicted as Billing, how many actually belong there?
 - **Recall:** Of all actual Billing tickets, how many did we identify?
 
-## My recall mnemonic
+## 2. My recall mnemonic
 
 **RecAll → A → Actual**
 
@@ -20,7 +20,7 @@ Of **all actual Billing tickets**, how many did we identify?
 Precision starts with the **predicted** Billing tickets; recall starts with the
 **actual** Billing tickets.
 
-## Formulas
+## 3. Formulas
 
 - **TP:** Actual Billing ticket predicted as Billing.
 - **FP:** Non-Billing ticket predicted as Billing.
@@ -39,7 +39,7 @@ tickets, of which 60 really belong there:
 These definitions describe the classifier's predictions. When adding human
 triage, define separately how deferred tickets count in end-to-end evaluation.
 
-## Training, validation and test splits
+## 4. Training, validation and test splits
 
 **Train = learn. Validation = choose. Test = check the final choice.**
 
@@ -53,7 +53,7 @@ An illustrative split is **70% training / 15% validation / 15% test**. These
 percentages are a starting point, not a rule. Each evaluation set needs enough
 examples of rare classes to support useful conclusions.
 
-### How I would split support tickets
+### 4.1 How I would split support tickets
 
 Because we deploy on future tickets, use **chronological windows** rather than
 randomly mixing past and future data. For example, with one year of history:
@@ -84,7 +84,7 @@ for reproducibility. If examples share a patient, document or conversation,
 consider group-based splits. For a chronological evaluation, retain the actual
 later-period distribution rather than forcing it to match historical proportions.
 
-### Development workflow
+### 4.2 Development workflow
 
 1. Set aside the test set before model development.
 2. Train candidate models on training data.
@@ -102,7 +102,7 @@ If I later refit on training + validation data, the model has changed; I must
 plan separate calibration/threshold data and evaluate that actual final artifact.
 Do not assume old confidence thresholds transfer unchanged.
 
-### Holdout versus validation
+### 4.3 Holdout versus validation
 
 **Holdout describes separation; validation describes a purpose.**
 
@@ -117,7 +117,7 @@ People sometimes say “holdout” when they mean the final test set. Clarify:
 A held-out validation set is unseen by parameter fitting but still influences
 model selection. It is therefore not an independent final test.
 
-### Where cross-validation fits
+### 4.4 Where cross-validation fits
 
 Cross-validation uses several training/validation folds to compare choices
 more robustly. Keep a separate final test set. For tickets evolving over time,
@@ -125,7 +125,144 @@ use forward-looking folds: train on earlier data and validate on later data,
 without training on the future. Cross-validation complements a final holdout;
 it does not automatically replace it.
 
-## Related notes
+## 5. SMOTE and imbalanced datasets
+
+**SMOTE = Synthetic Minority Over-sampling Technique.** It creates synthetic
+feature vectors by interpolating between nearby examples of the same class:
+
+`synthetic = x + alpha * (neighbor - x)`, where `0 <= alpha <= 1`.
+
+It changes the training data; one-vs-rest metrics evaluate predictions.
+
+### 5.1 Techniques to recognize
+
+| Technique | Idea | Tradeoff |
+| --- | --- | --- |
+| SMOTE | Interpolate same-class neighbors | Can create overlap or amplify noisy examples |
+| Borderline-SMOTE | Focus on boundary examples | Emphasizes difficult cases, potentially including noise |
+| KMeans-SMOTE | Cluster before interpolation | Adds clustering choices and computation |
+| SMOTENC | Handle mixed numerical/categorical features | Requires identifying categorical columns |
+| SMOTEN | Handle categorical-only features | Not the method for dense text embeddings |
+| ADASYN (related method) | Generate more samples in difficult neighborhoods | Can overemphasize outliers |
+
+SMOTE provides variation beyond duplicating rows, but synthetic samples are not
+new independently observed evidence. It can help minority recall without
+guaranteeing better precision or overall performance.
+
+Source: [imbalanced-learn oversampling guide](https://imbalanced-learn.org/stable/over_sampling.html), checked October 31, 2026.
+
+### 5.2 Avoid leakage
+
+**Split first; resample training data only.** Keep validation and test sets at
+their natural distributions. In cross-validation, run SMOTE separately inside
+each training fold, preferably through an imbalanced-learn pipeline. Never
+resample the full dataset before splitting: synthetic examples can incorporate
+information from future validation/test records.
+
+Tune the oversampling amount and neighbor count using validation results.
+There must be enough same-class training examples for the chosen neighbors,
+including within each fold. Full class balance is not automatically optimal.
+
+Source: [imbalanced-learn leakage guidance](https://imbalanced-learn.org/stable/common_pitfalls.html), checked October 31, 2026.
+
+### 5.3 My decision checklist for ticket classification
+
+This is a design recommendation to validate experimentally:
+
+- **Start with alternatives:** compare the original baseline, class-weighted
+  training and random oversampling before adding synthetic interpolation.
+  Class weights avoid creating extra rows; random oversampling preserves real
+  examples but can overfit duplicates. Undersampling saves work but discards
+  potentially useful majority-class examples.
+- **Text caveat:** SMOTE acts on numerical features, not raw ticket text. A
+  synthetic embedding between two tickets is not necessarily a meaningful
+  ticket. Nearest-neighbor quality in high-dimensional representations must be
+  checked; do not assume semantic interpolation is valid.
+- **Quality first:** fix mislabeled examples before generating more around them.
+  Interpolation cannot supply missing real-world diversity for a rare class.
+- **Costs:** more rows mean additional training time and memory. This does not
+  inherently increase inference cost for a fixed-size classifier, though the
+  effect depends on the chosen model.
+- **Routing impact:** altered training class proportions can affect probability
+  calibration. Recheck confidence and human-triage thresholds on representative,
+  unresampled validation data.
+- **Success criterion:** compare per-class precision/recall, macro-F1, harmful
+  misroutes and automatic coverage. A recall gain that causes too many harmful
+  false positives may be unacceptable.
+
+**Interview phrasing:** “I would compare class weighting with SMOTE on the
+training partition, and keep it only if representative validation shows a useful
+improvement in our error-versus-coverage tradeoff.”
+
+## 6. Logistic regression for multiclass classification
+
+Despite its name, logistic regression is a **classifier**. Binary logistic
+regression turns a linear score into a probability using the sigmoid function.
+With more than two classes, there are three common approaches.
+
+Our example has **K = 4** mutually exclusive destinations: Billing, Account
+Access, Technical Support and General Enquiries.
+
+### 6.1 One-vs-Rest (OvR): each class versus everyone else
+
+Train **K binary classifiers**. For our queues, train Billing vs non-Billing,
+Account Access vs all others, Technical Support vs all others, and General
+Enquiries vs all others. Choose the highest-scoring class for a single-label
+prediction.
+
+Advantages: modular, easy to inspect and parallelize. Tradeoffs: each binary
+problem may be imbalanced, and independently produced probabilities need not
+sum to one before normalization.
+
+### 6.2 One-vs-One (OvO): every pair competes
+
+Train **K(K − 1)/2 binary classifiers**, each using only its two classes.
+Four queues require **6 classifiers**. Aggregate pairwise votes, with a
+score-based rule for ties.
+
+Advantages: smaller pairwise training problems. Tradeoffs: quadratically many
+models as K grows; combining votes into meaningful multiclass probabilities
+requires additional machinery.
+
+**Mnemonic: OvR = everyone else; OvO = pairs.**
+
+These are training strategies. **One-vs-rest evaluation** can assess any
+multiclass model, including a multinomial model; it does not imply OvR training.
+
+Source: [scikit-learn multiclass strategies](https://scikit-learn.org/stable/modules/multiclass.html), checked October 31, 2026.
+
+### 6.3 Multinomial logistic regression: all classes learned jointly
+
+Train **one joint model** with a score for each class, using multiclass
+cross-entropy. Softmax converts those scores into probabilities:
+
+`P(class = k | x) = exp(score_k) / sum_j exp(score_j)`
+
+where `score_k = weights_k · x + bias_k`.
+
+The probabilities sum to **1**. Choose the largest probability for the predicted
+class. There are class-specific weights, even though this is one joint model.
+
+Advantages: directly models mutually exclusive outcomes and produces one
+normalized probability distribution. Tradeoffs: optimization couples the
+classes; linear scores may miss complex feature relationships. Probabilities
+summing to one does **not** guarantee they are calibrated.
+
+Source: [scikit-learn logistic regression](https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression), checked October 31, 2026.
+
+### 6.4 My choice for the ticket exercise
+
+I would start by testing **multinomial logistic regression** on TF-IDF features
+or frozen embeddings: there are only four destinations, and we need one initial
+queue per ticket. OvR is a reasonable comparison; OvO adds pairwise bookkeeping
+that I would justify with measured gains before adopting it.
+
+This is a proposed baseline, not a guarantee of better performance. Compare
+per-class precision/recall and error-versus-coverage on validation data.
+Regardless of method, retain human triage when the prediction is insufficiently
+reliable. A model selecting one class does not mean the system must auto-route it.
+
+## 7. Related notes
 
 - [My interview solution](my-solution.md)
 - [Problem description](problem-description.md)
