@@ -22,6 +22,7 @@ The queue is broader than the implemented solution bank. Problem folders and sol
 | 1.1 Two Sum | Easy | [Problem](problems/week1/1-1-0001-two-sum/problem-description.md) | [Agent solution](problems/week1/1-1-0001-two-sum/agent-solution.md) | [My solution and examples](problems/week1/1-1-0001-two-sum/my-solution.py) |
 | 1.2 Contains Duplicate | Easy | [Problem](problems/week1/1-2-0217-contains-duplicate/problem-description.md) | [Agent solution](problems/week1/1-2-0217-contains-duplicate/agent-solution.md) | [My solution and examples](problems/week1/1-2-0217-contains-duplicate/my-solution.py) |
 | 1.3 Valid Anagram | Easy | [Problem](problems/week1/1-3-0242-valid-anagram/problem-description.md) | [Agent solution](problems/week1/1-3-0242-valid-anagram/agent-solution.md) | [My solution and examples](problems/week1/1-3-0242-valid-anagram/my-solution.py) |
+| 1.4 Group Anagrams | Medium | [Problem](problems/week1/1-4-0049-group-anagrams/problem-description.md) | [Agent solution](problems/week1/1-4-0049-group-anagrams/agent-solution.md) | [Python scaffold and examples](problems/week1/1-4-0049-group-anagrams/my-solution.py) |
 
 ### Try an exercise
 
