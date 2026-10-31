@@ -74,7 +74,7 @@ Try these after completing the initial design:
 ## Workspace
 
 - [My solution](my-solution.md)
-- [Agent solution](agent-solution.md) — pending until requested
+- [Agent solution](Agent-Solution.md)
 - [System design tracker](../../TRACKER.md)
 
 Start with your clarification questions, then your assumptions and success criteria.

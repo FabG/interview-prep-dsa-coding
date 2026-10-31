@@ -2,11 +2,11 @@
 
 Created October 25, 2026. This is an original selection of practice scopes, ordered by repository-assigned difficulty. Themes can be used to choose a focused path. Source links offer related guidance; they are not claims that each source contains our exact prompt or a free complete answer. See [source coverage and limitations](SOURCES.md).
 
-Cases start unattempted and are updated as attempts are recorded. Local descriptions and solution files are created when starting a case. `N`: not started; `G`: guided; `I`: independent; `R`: independently re-solved. Review defaults to No until an attempt identifies a need.
+Cases start unattempted and are updated as attempts are recorded. Local descriptions and solution files are created when starting a case. `P`: partial attempt; `N`: not started; `G`: guided; `I`: independent; `R`: independently re-solved. Review defaults to No until an attempt identifies a need.
 
 | # | Exercise scope | Theme | Difficulty | Related guidance | Outcome | To review again? |
 | --- | --- | --- | --- | --- | --- | --- |
-| SD-001 | [Ticket classifier with human fallback](exercises/sd-001-ticket-classifier/problem-description.md) · [My solution](exercises/sd-001-ticket-classifier/my-solution.md) | Classical ML | Foundation | [AIML framework](https://github.com/alirezadir/AIMLInterviews/blob/main/src/MLSD/ml-system-design.md) | N | No |
+| SD-001 | [Ticket classifier with human fallback](exercises/sd-001-ticket-classifier/problem-description.md) · [My solution](exercises/sd-001-ticket-classifier/my-solution.md) · [Agent solution](exercises/sd-001-ticket-classifier/Agent-Solution.md) · [Feedback](exercises/sd-001-ticket-classifier/interview-feedback.md) · 2026-10-31: 15-minute partial attempt | Classical ML | Foundation | [AIML framework](https://github.com/alirezadir/AIMLInterviews/blob/main/src/MLSD/ml-system-design.md) | P | Yes |
 | SD-002 | Batch document summarizer | GenAI | Foundation | [Educative syllabus (paid cases)](https://www.educative.io/courses/generative-ai-system-design) | N | No |
 | SD-003 | Help-center Q&A over public documents | GenAI / RAG | Foundation | [AI Interview Hub (free worked cases)](https://github.com/aishwaryanr/awesome-generative-ai-guide/tree/main/interview_prep/system-design) | N | No |
 | SD-004 | Bot account detection | Classical ML | Intermediate | [Hello Interview (free + premium)](https://www.hellointerview.com/learn/ml-system-design/in-a-hurry/introduction) | N | No |

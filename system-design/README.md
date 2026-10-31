@@ -13,7 +13,7 @@ The queue contains original practice scopes linked to relevant learning material
 
 | # | Exercise | Difficulty | My solution | Agent solution |
 | --- | --- | --- | --- | --- |
-| SD-001 | [Ticket classifier with human fallback](exercises/sd-001-ticket-classifier/problem-description.md) | Foundation | [Answer workspace](exercises/sd-001-ticket-classifier/my-solution.md) | Pending |
+| SD-001 | [Ticket classifier with human fallback](exercises/sd-001-ticket-classifier/problem-description.md) | Foundation | [15-minute attempt](exercises/sd-001-ticket-classifier/my-solution.md) | [Worked design](exercises/sd-001-ticket-classifier/Agent-Solution.md) |
 
 ## Difficulty
 
