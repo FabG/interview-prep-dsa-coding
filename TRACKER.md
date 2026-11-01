@@ -11,6 +11,7 @@ The **Complexity** column records LeetCode difficulty (Easy, Medium or Hard), no
 ## Recording outcomes
 
 - `N`: not started.
+- `P`: partial attempt; correctness or required constraints still need work.
 - `G`: solved with a hint, explanation, AI assistance or viewed code.
 - `I`: solved independently during this attempt.
 - `R`: successfully re-solved independently on a later date.
@@ -24,8 +25,8 @@ Use ISO dates (`YYYY-MM-DD`) for attempts. Set **To review again?** to **Yes** w
 | 1.1 | [1 Two Sum](https://leetcode.com/problems/two-sum/) | Easy | G | 2026-10-25 | Yes | [Problem](problems/week1/1-1-0001-two-sum/problem-description.md) · [My solution](problems/week1/1-1-0001-two-sum/my-solution.py) · Guided hash map; O(n) average time, O(n) space; 3/3 local examples pass. Re-solve unaided; LeetCode acceptance unconfirmed. |
 | 1.2 | [217 Contains Duplicate](https://leetcode.com/problems/contains-duplicate/) | Easy | I | 2026-10-25 | No | [Problem](problems/week1/1-2-0217-contains-duplicate/problem-description.md) · [My solution](problems/week1/1-2-0217-contains-duplicate/my-solution.py) · [Agent solution](problems/week1/1-2-0217-contains-duplicate/agent-solution.md) · Independently solved using set length comparison; O(n) average time, O(n) worst-case space; 3/3 local examples pass. LeetCode acceptance unconfirmed. |
 | 1.3 | [242 Valid Anagram](https://leetcode.com/problems/valid-anagram/) | Easy | I | 2026-10-25 | No | [Problem](problems/week1/1-3-0242-valid-anagram/problem-description.md) · [My solution](problems/week1/1-3-0242-valid-anagram/my-solution.py) · [Agent solution](problems/week1/1-3-0242-valid-anagram/agent-solution.md) · Independently solved without hints using sorting; O(n log n + m log m) time, O(n + m) space; 2/2 local examples pass. LeetCode acceptance unconfirmed. |
-| 1.4 | [49 Group Anagrams](https://leetcode.com/problems/group-anagrams/) | Medium | N |  | No | [Problem](problems/week1/1-4-0049-group-anagrams/problem-description.md) · [My solution](problems/week1/1-4-0049-group-anagrams/my-solution.py) · [Agent solution](problems/week1/1-4-0049-group-anagrams/agent-solution.md) available; personal attempt not recorded. |
-| 1.5 | [238 Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) | Medium | N |  | No |  |
+| 1.4 | [49 Group Anagrams](https://leetcode.com/problems/group-anagrams/) | Medium | I | 2026-10-31 | No | [Problem](problems/week1/1-4-0049-group-anagrams/problem-description.md) · [My solution](problems/week1/1-4-0049-group-anagrams/my-solution.py) · [Agent solution](problems/week1/1-4-0049-group-anagrams/agent-solution.md) · Independently solved, as confirmed by the user. |
+| 1.5 | [238 Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) | Medium | P | 2026-11-01 | Yes | [Problem](problems/week1/1-5-0238-product-of-array-except-self/problem-description.md) · [My solution](problems/week1/1-5-0238-product-of-array-except-self/my-solution.py) · [Agent solution](problems/week1/1-5-0238-product-of-array-except-self/agent-solution.md) · Slicing + math.prod: O(n²) time, O(n) auxiliary space; 6/6 local cases pass. Optimize to meet required O(n) time; acceptance unconfirmed. |
 
 ## Week 2 Two pointers and sliding windows
 
