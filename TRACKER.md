@@ -32,7 +32,7 @@ Use ISO dates (`YYYY-MM-DD`) for attempts. Set **To review again?** to **Yes** w
 
 | # | Problem | Complexity | Outcome | Last attempt | To review again? | Main mistake or note path |
 | --- | --- | --- | --- | --- | --- | --- |
-| 2.1 | [125 Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) | Easy | N |  | No |  |
+| 2.1 | [125 Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) | Easy | G | 2026-11-13 | No | [Problem](problems/week2/2-1-0125-valid-palindrome/problem-description.md) · [My solution](problems/week2/2-1-0125-valid-palindrome/my-solution.py) · Implemented with Python syntax guidance; O(n) time, O(n) auxiliary space; 8/8 local checks pass. [Agent solution](problems/week2/2-1-0125-valid-palindrome/agent-solution.md): O(n) time, O(1) space. LeetCode acceptance unconfirmed. |
 | 2.2 | [167 Two Sum II Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/) | Medium | N |  | No |  |
 | 2.3 | [15 3Sum](https://leetcode.com/problems/3sum/) | Medium | N |  | No |  |
 | 2.4 | [3 Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) | Medium | N |  | No |  |

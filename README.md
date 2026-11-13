@@ -24,6 +24,7 @@ The queue is broader than the implemented solution bank. Problem folders and sol
 | 1.3 Valid Anagram | Easy | [Problem](problems/week1/1-3-0242-valid-anagram/problem-description.md) | [Agent solution](problems/week1/1-3-0242-valid-anagram/agent-solution.md) | [My solution and examples](problems/week1/1-3-0242-valid-anagram/my-solution.py) |
 | 1.4 Group Anagrams | Medium | [Problem](problems/week1/1-4-0049-group-anagrams/problem-description.md) | [Agent solution](problems/week1/1-4-0049-group-anagrams/agent-solution.md) | [Python scaffold and examples](problems/week1/1-4-0049-group-anagrams/my-solution.py) |
 | 1.5 Product of Array Except Self | Medium | [Problem](problems/week1/1-5-0238-product-of-array-except-self/problem-description.md) | [Agent solution](problems/week1/1-5-0238-product-of-array-except-self/agent-solution.md) | [Python scaffold and examples](problems/week1/1-5-0238-product-of-array-except-self/my-solution.py) |
+| 2.1 Valid Palindrome | Easy | [Problem](problems/week2/2-1-0125-valid-palindrome/problem-description.md) | [Agent solution](problems/week2/2-1-0125-valid-palindrome/agent-solution.md) | [My solution and examples](problems/week2/2-1-0125-valid-palindrome/my-solution.py) |
 
 ### Try an exercise
 
